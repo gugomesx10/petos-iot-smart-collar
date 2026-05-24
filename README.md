@@ -94,7 +94,7 @@ A solução complementa o ecossistema PetOS ao possibilitar monitoramento contí
 
 ## 🎥 Demonstração
 
-> ⚠️ _Adicionar aqui o link do vídeo no YouTube (modo não listado)._
+[![Assista à demonstração no YouTube](https://img.youtube.com/vi/VcSdm9VW4HA/0.jpg)](https://youtu.be/VcSdm9VW4HA)
 
 ---
 
