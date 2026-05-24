@@ -1,70 +1,111 @@
-# PetOS IoT Smart Collar
+# 🐾 PetOS IoT Smart Collar
 
-Protótipo IoT desenvolvido para o Challenge PetOS, simulando uma coleira inteligente para monitoramento preventivo da saúde do pet.
+> Protótipo IoT desenvolvido para o **Challenge PetOS** — uma coleira inteligente para monitoramento preventivo da saúde do pet.
 
-## Problema
+![Arduino](https://img.shields.io/badge/Arduino-C%2B%2B-00979D?style=flat&logo=arduino&logoColor=white)
+![ESP32](https://img.shields.io/badge/Hardware-ESP32-E7352C?style=flat)
+![Wokwi](https://img.shields.io/badge/Simulador-Wokwi-7B2FBE?style=flat)
+![Turma](https://img.shields.io/badge/Turma-2TDSPO-blue?style=flat)
+
+---
+
+## 🐶 Problema
 
 Tutores geralmente só percebem alterações na saúde do pet quando os sintomas já estão evidentes. Isso dificulta o cuidado preventivo e reduz a previsibilidade no acompanhamento da saúde animal.
 
-## Solução
+## 💡 Solução
 
-O protótipo utiliza um ESP32 com sensores para monitorar temperatura, umidade e movimento do pet em tempo real. Quando algum dado sai do padrão esperado, o sistema gera alertas no dashboard serial, além de acionar LED vermelho e buzzer.
+O protótipo utiliza um **ESP32** com sensores para monitorar temperatura, umidade e movimento do pet em tempo real. Quando algum dado sai do padrão esperado, o sistema:
 
-## Tecnologias Utilizadas
+- Exibe alertas no **Serial Monitor** (dashboard da prova de conceito)
+- Aciona o **LED vermelho** como indicador visual
+- Dispara o **buzzer** como alerta sonoro
 
-- ESP32
-- Sensor DHT22
-- Sensor PIR
-- LEDs
-- Buzzer
-- Wokwi
-- Arduino/C++
+---
 
-## Componentes
+## 🛠️ Tecnologias Utilizadas
 
-- DHT22: coleta temperatura e umidade
-- PIR: detecta movimento do pet
-- LED verde: condição normal
-- LED vermelho: alerta
-- Buzzer: alerta sonoro
+| Tecnologia | Descrição |
+|---|---|
+| ESP32 | Microcontrolador principal |
+| DHT22 | Sensor de temperatura e umidade |
+| PIR | Sensor de movimento |
+| LEDs | Indicadores visuais (verde / vermelho) |
+| Buzzer | Alerta sonoro |
+| Wokwi | Simulador online do circuito |
+| Arduino / C++ | Linguagem de programação |
 
-## Funcionamento
+---
 
-O ESP32 lê os dados dos sensores e exibe as informações no Serial Monitor, utilizado como dashboard inicial da prova de conceito.
+## ⚙️ Componentes e Pinagem
 
-Condições normais:
-- Temperatura até 35°C
-- Umidade entre 30% e 75%
-- Movimento detectado
+| Componente | Pino (ESP32) | Função |
+|---|---|---|
+| DHT22 | GPIO 15 | Temperatura e umidade |
+| PIR | GPIO 13 | Detecção de movimento |
+| LED Verde | GPIO 26 | Condição normal |
+| LED Vermelho | GPIO 27 | Alerta |
+| Buzzer | GPIO 25 | Alerta sonoro |
 
-Condições de alerta:
-- Temperatura acima de 35°C
-- Umidade abaixo de 30% ou acima de 75%
-- Ausência de movimento
+---
 
-## Relação com o PetOS
+## 📊 Funcionamento
 
-A solução complementa o PetOS ao permitir monitoramento contínuo do pet. Em uma versão futura, os dados coletados pela coleira inteligente poderiam ser enviados ao aplicativo, gerando alertas para o tutor e histórico para clínicas veterinárias.
+O ESP32 lê continuamente os dados dos sensores e exibe as informações no Serial Monitor.
 
-## Como Executar
+### ✅ Condições Normais
 
-1. Acesse o projeto no Wokwi
+| Parâmetro | Faixa Ideal |
+|---|---|
+| Temperatura | ≤ 35 °C |
+| Umidade | 30% – 75% |
+| Movimento | Detectado |
+
+### 🚨 Condições de Alerta
+
+| Parâmetro | Condição de Alerta |
+|---|---|
+| Temperatura | > 35 °C |
+| Umidade | < 30% ou > 75% |
+| Movimento | Ausente (possível inatividade) |
+
+> Em caso de alerta: LED vermelho acende, buzzer dispara e a mensagem **"Atenção necessária"** é exibida no Serial Monitor.
+
+---
+
+## 🔗 Relação com o PetOS
+
+A solução complementa o ecossistema PetOS ao possibilitar monitoramento contínuo do pet. Em versões futuras, os dados coletados pela coleira poderiam ser enviados ao aplicativo, gerando:
+
+- 📲 Alertas em tempo real para o tutor
+- 📋 Histórico de saúde para clínicas veterinárias
+
+---
+
+## ▶️ Como Executar
+
+1. Acesse o projeto no [Wokwi](https://wokwi.com/projects/464910060149291009)
 2. Inicie a simulação
-3. Abra o Serial Monitor
-4. Altere os valores do DHT22 e do PIR
+3. Abra o **Serial Monitor**
+4. Altere os valores do **DHT22** e do **PIR** para simular cenários
 5. Observe os alertas e indicadores visuais
 
-## Demonstração
+---
 
-Adicionar aqui o link do vídeo no YouTube em modo não listado.
+## 🎥 Demonstração
 
-## Autores
+> ⚠️ _Adicionar aqui o link do vídeo no YouTube (modo não listado)._
 
-Turma: 2TDSPO
+---
 
-Aluno	RM
-Gustavo Gomes Martins	555999
-Pedro dos Anjos	563832
-Matheus de Mattos Vecchi	561716
-Nicholas Albuquerque Buzo	561082
-Nicholas Camillo Canadas de Paula	561262
+## 👥 Autores
+
+**Turma:** 2TDSPO
+
+| Aluno | RM |
+|---|---|
+| Gustavo Gomes Martins | 555999 |
+| Pedro dos Anjos | 563832 |
+| Matheus de Mattos Vecchi | 561716 |
+| Nicholas Albuquerque Buzo | 561082 |
+| Nicholas Camillo Canadas de Paula | 561262 |
